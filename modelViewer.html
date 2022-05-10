@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body >
+<!-- Import the component -->
+<script type="module"
+        src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+<script type="module">
+
+  window.switchSrc = () => {
+
+const url = new URL(window.location.href);
+const a = url.searchParams.get("a");
+const token = url.searchParams.get("token");
+alert(a+"&token="+token);
+  const modelViewer = document.querySelector("model-viewer");
+    modelViewer.src = a+"&token="+token;
+      };
+
+</script>
+<model-viewer
+        id="reveal"
+        loading="eager"
+        camera-controls="true"
+        auto-rotate="true"
+        poster=""
+        src="https://firebasestorage.googleapis.com/v0/b/mygs-256c6.appspot.com/o/3dContent%2FBiology%2Fch01%2Ffig1.3.glb?alt=media&token=18e38d9b-d527-4c77-bfaa-619edd919549"
+        alt="Bold [3D]"
+        ar-status="not-presenting"
+        style="width: 100%; height: 100%; position: absolute; left: 0px; top: 0px; z-index:10; display: block;">
+</model-viewer>
+</body>
+</html>
